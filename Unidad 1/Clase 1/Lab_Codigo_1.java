@@ -1,6 +1,8 @@
-public class Multiplicacion {
+import java.util.Scanner;
 
-    // Función no recursiva
+public class Lab_Codigo_1 {
+
+    //no recursiva
     public static int multiplicacionNoRecursiva(int a, int b) {
         int resultado = 0;
         for (int i = 0; i < b; i++) {
@@ -9,7 +11,7 @@ public class Multiplicacion {
         return resultado;
     }
 
-    // Función recursiva
+    //recursiva
     public static int multiplicacionRecursiva(int a, int b) {
         if (b == 0) {
             return 0;
@@ -20,9 +22,18 @@ public class Multiplicacion {
         }
     }
 
-    // Ejemplo de uso
     public static void main(String[] args) {
-        System.out.println("Multiplicación no recursiva: " + multiplicacionNoRecursiva(5, 3));
-        System.out.println("Multiplicación recursiva: " + multiplicacionRecursiva(5, 3));
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Ingrese el valor de a: ");
+        int a = scanner.nextInt();
+
+        System.out.println("Ingrese el valor de b: ");
+        int b = scanner.nextInt();
+
+
+        System.out.println("Multiplicación no recursiva: " + multiplicacionNoRecursiva(a, b));
+        System.out.println("Multiplicación recursiva: " + multiplicacionRecursiva(a, b));
     }
 }
