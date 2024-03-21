@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Lab_Codigo_1 {
+public class Main {
 
     //no recursiva
     public static int multiplicacionNoRecursiva(int a, int b) {
