@@ -19,4 +19,11 @@ public class Lab_Codigo_2 {
         }
         return buscarNumeroRecursivo(vector, x, index + 1);
     }
+
+    public static void main(String[] args) {
+        int[] vector = {1, 2, 3, 4, 5};
+        int x = 3;
+        System.out.println("Search using non-recursive method: " + buscarNumeroNoRecursivo(vector, x));
+        System.out.println("Search using recursive method: " + buscarNumeroRecursivo(vector, x, 0));
+    }
 }

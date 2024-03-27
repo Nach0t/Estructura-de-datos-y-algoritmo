@@ -1,4 +1,3 @@
-
 public class Lab_Codigo_1 {
     public static int sumarNoRecursivo(int[] vector) {
         int suma = 0;
@@ -13,5 +12,11 @@ public class Lab_Codigo_1 {
             return 0;
         }
         return vector[index] + sumarRecursivo(vector, index + 1);
+    }
+
+    public static void main(String[] args) {
+        int[] vector = {1, 2, 3, 4, 5};
+        System.out.println("Sum using non-recursive method: " + sumarNoRecursivo(vector));
+        System.out.println("Sum using recursive method: " + sumarRecursivo(vector, 0));
     }
 }
