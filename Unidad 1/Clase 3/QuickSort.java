@@ -1,15 +1,17 @@
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Quickshort{
+public class QuickSort {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Introduce los números separados por espacios: ");
-        String[] numeros = scanner.nextLine().split(" ");
+        System.out.println("Introduce los números separados por comas: ");
+        String[] numeros = scanner.nextLine().split(",");
         int[] arr = new int[numeros.length];
         for (int i = 0; i < numeros.length; i++) {
             arr[i] = Integer.parseInt(numeros[i]);
         }
+        // Se mueve la impresión del arreglo original fuera del bucle
+        System.out.println("Array original: " + Arrays.toString(arr));
         quicksort(arr, 0, arr.length - 1);
         System.out.println("Array ordenado: " + Arrays.toString(arr));
     }
@@ -24,7 +26,7 @@ public class Quickshort{
 
     public static int particion(int[] arr, int bajo, int alto) {
         int pivote = arr[alto];
-        int i = bajo - 1;
+        int i = (bajo - 1);
         for (int j = bajo; j < alto; j++) {
             if (arr[j] < pivote) {
                 i++;
