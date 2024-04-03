@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Codigo_2 {
     public static void main(String[] args) {
-        int[] arr = { 44, 75, 23, 43, 55, 12, 64, 77, 33 };
+        int[] arr = { 44, 75, 23, 43, 55, 12, 64, 77, 33};
         quicksort(arr, 0, arr.length - 1);
         System.out.println("Sorted array: " + Arrays.toString(arr));
     }
