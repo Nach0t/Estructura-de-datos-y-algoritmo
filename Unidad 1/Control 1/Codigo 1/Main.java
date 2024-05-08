@@ -54,7 +54,6 @@ public class Main {
     // Recorremos desde 1 hasta el número actual
     for (int i = 1; i <= valor; i++) {
       // Llamada recursiva restando el valor actual y agregándolo a la combinación
-      // actual
       List<Integer> nuevaCombinacion = new ArrayList<>(combinacionActual);
       nuevaCombinacion.add(i);
       descomponer(valor - i, valorOriginal, nuevaCombinacion);
