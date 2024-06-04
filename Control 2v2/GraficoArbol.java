@@ -7,7 +7,8 @@ class GraficoArbol extends JPanel {
   public GraficoArbol(ArbolBinarioBusqueda arbol) {
     this.arbol = arbol;
   }
-
+  
+  // Dibuja un nodo en la posición (x, y) con un desplazamiento horizontal xOffset
   private void dibujarNodo(Graphics g, Nodo nodo, int x, int y, int xOffset) {
     if (nodo == null)
       return;
@@ -23,6 +24,7 @@ class GraficoArbol extends JPanel {
     dibujarNodo(g, nodo.derecho, x + xOffset, y + 60, xOffset / 2);
   }
 
+  // Override el método paintComponent para dibujar el árbol
   @Override
   protected void paintComponent(Graphics g) {
     super.paintComponent(g);

@@ -100,4 +100,15 @@ public class ArbolBinarioBusqueda {
       System.out.print(raiz.valor + " ");
     }
   }
+
+  // Método para buscar un valor en el árbol
+  Nodo buscar(Nodo nodo, int valor) {
+    if (nodo == null || nodo.valor == valor)
+      return nodo;
+
+    if (valor < nodo.valor)
+      return buscar(nodo.izquierdo, valor);
+    else
+      return buscar(nodo.derecho, valor);
+  }
 }
