@@ -2,9 +2,12 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.Scanner;
 
+// Clase principal que maneja la entrada y salida del programa
 public class Main {
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
+    // Crear un árbol binario de búsqueda o AVL dependiendo de la elección del
+    // usuario
     ArbolBinarioBusqueda arbol = null;
     ArbolAVL arbolAVL = null;
     boolean esAVL = false;
@@ -30,16 +33,21 @@ public class Main {
     }
 
     ArbolBinarioBusqueda arbolFinal = esAVL ? arbolAVL : arbol;
-    JFrame frame = new JFrame("Visualización del Árbol");
+    JFrame frame = new JFrame("Árbol");
     GraficoArbol grafico = new GraficoArbol(arbolFinal);
     frame.add(grafico);
-    frame.setSize(800, 600);
+    frame.setSize(650, 600);
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     frame.setVisible(true);
 
     while (true) {
       System.out.println(
-          "\n1. Insertar\n2. Eliminar\n3. Altura\n4. Cantidad de nodos\n5. Recorrer in-order\n6. Recorrer pre-order\n7. Recorrer post-order\n8. Mínimo\n9. Máximo\n10. Salir\nOperacion: ");
+          "\n1. Insertar\n2. Eliminar\n3. Altura\n4. Cantidad de nodos\n5. Recorrer in-order\n6. Recorrer pre-order\n7. Recorrer post-order\n8. Mínimo\n9. Máximo\n10. volver al menú\n 11. Salir\nOperacion: "); // No
+                                                                                                                                                                                                                  // seria
+                                                                                                                                                                                                                  // mejor
+                                                                                                                                                                                                                  // dejarlo
+                                                                                                                                                                                                                  // hacia
+                                                                                                                                                                                                                  // abajo?
       int operacion;
       try {
         operacion = scanner.nextInt();
@@ -155,6 +163,10 @@ public class Main {
           }
           break;
         case 10:
+          System.out.println("Volviendo al menú principal.");
+          break; // c: ta dificil hacerlo xD
+        case 11:
+          System.out.println("Saliendo del programa, hasta luego.");
           System.exit(0);
         default:
           System.out.println("Operación no válida.");

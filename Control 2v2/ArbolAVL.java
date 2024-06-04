@@ -1,7 +1,9 @@
 public class ArbolAVL extends ArbolBinarioBusqueda {
 
   Nodo rotacionDerecha(Nodo y) {
+    // Rotación simple a la derecha
     Nodo x = y.izquierdo;
+    // Guardar el subárbol derecho de x
     Nodo T2 = x.derecho;
 
     x.derecho = y;
@@ -26,6 +28,8 @@ public class ArbolAVL extends ArbolBinarioBusqueda {
     return altura(N.izquierdo) - altura(N.derecho);
   }
 
+  // recursive con insertar y eliminar, y decoradores para rotacionDerecha y
+  // rotacionIzquierda
   @Override
   Nodo insertarRecursivo(Nodo nodo, int valor) {
     if (nodo == null)
@@ -59,6 +63,8 @@ public class ArbolAVL extends ArbolBinarioBusqueda {
     return nodo;
   }
 
+  // recursive con insertar y eliminar, y decoradores para rotacionDerecha y
+  // rotacionIzquierda
   @Override
   Nodo eliminarRecursivo(Nodo raiz, int valor) {
     if (raiz == null)
