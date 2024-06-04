@@ -42,12 +42,7 @@ public class Main {
 
     while (true) {
       System.out.println(
-          "\n1. Insertar\n2. Eliminar\n3. Altura\n4. Cantidad de nodos\n5. Recorrer in-order\n6. Recorrer pre-order\n7. Recorrer post-order\n8. Mínimo\n9. Máximo\n10. volver al menú\n 11. Salir\nOperacion: "); // No
-                                                                                                                                                                                                                  // seria
-                                                                                                                                                                                                                  // mejor
-                                                                                                                                                                                                                  // dejarlo
-                                                                                                                                                                                                                  // hacia
-                                                                                                                                                                                                                  // abajo?
+          "\n1. Insertar\n2. Eliminar\n3. Altura\n4. Cantidad de nodos\n5. Recorrer in-order\n6. Recorrer pre-order\n7. Recorrer post-order\n8. Mínimo\n9. Máximo\n10. volver al menú\n 11. Salir\nOperacion: ");
       int operacion;
       try {
         operacion = scanner.nextInt();
