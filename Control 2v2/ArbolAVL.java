@@ -3,7 +3,6 @@ public class ArbolAVL extends ArbolBinarioBusqueda {
   Nodo rotacionDerecha(Nodo y) {
     // Rotación simple a la derecha
     Nodo x = y.izquierdo;
-    // Guardar el subárbol derecho de x
     Nodo T2 = x.derecho;
 
     x.derecho = y;
@@ -28,8 +27,6 @@ public class ArbolAVL extends ArbolBinarioBusqueda {
     return altura(N.izquierdo) - altura(N.derecho);
   }
 
-  // recursive con insertar y eliminar, y decoradores para rotacionDerecha y
-  // rotacionIzquierda
   @Override
   Nodo insertarRecursivo(Nodo nodo, int valor) {
     if (nodo == null)
@@ -44,27 +41,31 @@ public class ArbolAVL extends ArbolBinarioBusqueda {
 
     int balance = obtenerBalance(nodo);
 
-    if (balance > 1 && valor < nodo.izquierdo.valor)
+    if (balance > 1 && valor < nodo.izquierdo.valor) {
+      System.out.println("Rotación a la derecha.");
       return rotacionDerecha(nodo);
+    }
 
-    if (balance < -1 && valor > nodo.derecho.valor)
+    if (balance < -1 && valor > nodo.derecho.valor) {
+      System.out.println("Rotación a la izquierda.");
       return rotacionIzquierda(nodo);
+    }
 
     if (balance > 1 && valor > nodo.izquierdo.valor) {
       nodo.izquierdo = rotacionIzquierda(nodo.izquierdo);
+      System.out.println("Doble rotación: Izquierda-Derecha.");
       return rotacionDerecha(nodo);
     }
 
     if (balance < -1 && valor < nodo.derecho.valor) {
       nodo.derecho = rotacionDerecha(nodo.derecho);
+      System.out.println("Doble rotación: Derecha-Izquierda.");
       return rotacionIzquierda(nodo);
     }
 
     return nodo;
   }
 
-  // recursive con insertar y eliminar, y decoradores para rotacionDerecha y
-  // rotacionIzquierda
   @Override
   Nodo eliminarRecursivo(Nodo raiz, int valor) {
     if (raiz == null)
@@ -99,19 +100,25 @@ public class ArbolAVL extends ArbolBinarioBusqueda {
 
     int balance = obtenerBalance(raiz);
 
-    if (balance > 1 && obtenerBalance(raiz.izquierdo) >= 0)
-      return rotacionDerecha(raiz);
-
-    if (balance > 1 && obtenerBalance(raiz.izquierdo) < 0) {
-      raiz.izquierdo = rotacionIzquierda(raiz.izquierdo);
+    if (balance > 1 && obtenerBalance(raiz.izquierdo) >= 0) {
+      System.out.println("Rotación a la derecha.");
       return rotacionDerecha(raiz);
     }
 
-    if (balance < -1 && obtenerBalance(raiz.derecho) <= 0)
+    if (balance > 1 && obtenerBalance(raiz.izquierdo) < 0) {
+      raiz.izquierdo = rotacionIzquierda(raiz.izquierdo);
+      System.out.println("Doble rotación: Izquierda-Derecha.");
+      return rotacionDerecha(raiz);
+    }
+
+    if (balance < -1 && obtenerBalance(raiz.derecho) <= 0) {
+      System.out.println("Rotación a la izquierda.");
       return rotacionIzquierda(raiz);
+    }
 
     if (balance < -1 && obtenerBalance(raiz.derecho) > 0) {
       raiz.derecho = rotacionDerecha(raiz.derecho);
+      System.out.println("Doble rotación: Derecha-Izquierda.");
       return rotacionIzquierda(raiz);
     }
 
